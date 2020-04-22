@@ -6,6 +6,7 @@ if(isset($_SESSION['$UserName_job'])){
 		header('location:../index.php');
 	}
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -79,35 +80,69 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                <h2><span><a href="#">Welcome <?php echo $_SESSION['Name'];?></a></span></h2>
                
-
-                <table width="100%" border="0">
+<?php
+$ID=$_SESSION['ID'];
+// Establish Connection with Database
+$con = mysqli_connect("localhost","root","","job");
+// Specify the query to execute
+$sql = "select * from JobSeeker_Reg where JobSeekId='".$ID."'  ";
+// Execute query
+$result = mysqli_query($con,$sql);
+// Loop through each records 
+$row = mysqli_fetch_array($result)
+?>
+                <table width="100%" border="1" cellspacing="2" cellpadding="2">
                   <tr>
-                    <td><div align="center"><img src="design/Profile.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Edu.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Search.png" alt="" width="64" height="64" /></div></td>
+                    <td><strong>Name:</strong></td>
+                    <td><?php echo $row['JobSeekerName'];?></td>
                   </tr>
                   <tr>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Profile.php"><strong>Profile</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Education.php"><strong>Education</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="SearchJob.php"><strong>Search JOB</strong></a></div></td>
+                    <td><strong>Address:</strong></td>
+                    <td><?php echo $row['Address'];?></td>
                   </tr>
                   <tr>
-                    <td><div align="center"><img src="design/Interview.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Feedback.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Log.png" alt="" width="64" height="64" /></div></td>
+                    <td><strong>City:</strong></td>
+                    <td><?php echo $row['City'];?></td>
                   </tr>
                   <tr>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Walkin.php"><strong>Walkin</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Feedback.php"><strong>Feedback</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="logout.php"><strong>Logout</strong></a></div></td>
+                    <td><strong>Email:</strong></td>
+                    <td><?php echo $row['Email'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Mobile:</strong></td>
+                    <td><?php echo $row['Mobile'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Highest Qualification:</strong></td>
+                    <td><?php echo $row['Qualification'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Gender:</strong></td>
+                    <td><?php echo $row['Gender'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Birth Date:</strong></td>
+                    <td><?php echo $row['BirthDate'];?></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Resume:</strong></td>
+                    <td><a href="../upload/<?php echo $row['Resume'];?>" target="_blank"><strong>View</strong></a></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                   </tr>
                 </table>
-                <p>&nbsp;</p>
+              <p>&nbsp;</p>
 
-              <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
+
+            <?php
+            mysqli_close($con);
+            ?>
 
             <hr class="noscreen" />
             

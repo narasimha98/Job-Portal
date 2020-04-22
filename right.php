@@ -1,91 +1,50 @@
         <!-- Right column -->
-<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
-<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css">
+<?php
+
+?>
+<style type="text/css">
+<!--
+.style1 {font-size: 18px}
+-->
+</style>
+
+
 <div id="col" class="noprint">
             <div id="col-in">
 
                 <!-- About Me -->
-                <h3>Contact Us</h3>
+                <h3>Welcome</h3>
 
                 <div id="about-me">
-                    <p><strong>Job.com</strong></p>
-					<P>875697</P>
-                    <p>8073532298</p>
-                    <p>Job.com<br />
+                    <p class="style1">
+                      <?php 
+					
+					?>
                     </p>
-               <p><b>Bangalore,India </b></p>
-</div> <!-- /about-me -->
+              </div> 
+                <!-- /about-me -->
 
                 <hr class="noscreen" />
 
                 <!-- Category -->
-                <h3 >Login</h3>
-<div class="login">
-                <form name="form1" method="post" action="login.php">
-                  <table width="100%" border="0">
-                    <tr>
-                      <td><strong>User Name</strong></td>
-                    </tr>
-                    <tr>
-        <td><span id="sprytextfield1">
-                        <label>
-                        <input type="text" name="txtUser" id="txtUser">
-                        </label>
-                      <span class="textfieldRequiredMsg">*</span></span>
-          <label></label></td>
-                    </tr>
-                    <tr>
-                      <td><strong>Password</strong></td>
-                    </tr>
-                    <tr>
-                <td><span id="sprytextfield2">
-                        <label>
-                        <input type="password" name="txtPass" id="txtPass">
-                        </label>
-                      <span class="textfieldRequiredMsg">*</span></span></td>
-                    </tr>
-                    <tr>
-                      <td><strong>User Type</strong></td>
-                    </tr>
-                    <tr>
-                      <td><label>
-                        <select name="cmbUser" id="cmbUser">
-                          <option value="JobSeeker">JobSeeker</option>
-                          <option value="Employer" selected="selected">Employer</option>
-                          <option value="Administrator">Administrator</option>
-                          </select>
-                      </label></td>
-                    </tr>
-                    <tr>
-                      <td><label>
-                        <div align="center">
-                          <input type="submit" name="button" id="button" value="Login">
-                          </div>
-                      </label></td>
-                    </tr>
-                    <tr>
-                      <td><div align="center"><a href="Forget.php"><strong>Forgot Password? </strong></a></div></td>
-                    </tr>
-                  </table>
-      </form>
-              </div>
-                <br/>
+                <h3 >&nbsp;</h3>
+
+              <br/>
 
       <hr class="noscreen" />
 
                 <!-- Archive -->
-              
+                <h3>&nbsp;</h3>
+
+                <br/>
 
             <hr class="noscreen" />
 
                 <!-- Links -->
-              
-                <hr class="noscreen" />
+                <h3>&nbsp;</h3>
+<br/>
+
+<hr class="noscreen" />
           </div> <!-- /col-in -->
-</div> <!-- /col -->
-        <script type="text/javascript">
-<!--
-var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
-var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
-//-->
-</script>
+</div> 
+<!-- /col -->

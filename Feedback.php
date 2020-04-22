@@ -6,6 +6,7 @@ if(isset($_SESSION['$UserName_job'])){
 		header('location:../index.php');
 	}
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="cs" lang="cs">
 <head>
@@ -16,7 +17,7 @@ if(isset($_SESSION['$UserName_job'])){
     <meta name="author" content="All: ... [Nazev webu - www.url.cz]; e-mail: info@url.cz" />
     <meta name="copyright" content="Design/Code: Vit Dlouhy [Nuvio - www.nuvio.cz]; e-mail: vit.dlouhy@nuvio.cz" />
     
-    <title>JOB PORTAL</title>
+<title>JOB PORTAL</title>
     <meta name="description" content="..." />
     <meta name="keywords" content="..." />
     
@@ -32,6 +33,8 @@ if(isset($_SESSION['$UserName_job'])){
 }
 -->
     </style>
+    <script src="../SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+    <link href="../SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body id="www-url-cz">
@@ -53,7 +56,7 @@ include "menu.php"
             <hr class="noscreen" />
 
             <!-- Breadcrumbs -->
-            <p id="breadcrumbs">&nbsp;</p>
+            <p id="breadcrumbs">You are here: <a href="index.php">Home</a></p>
           <hr class="noscreen" />
             
         </div> <!-- /strip -->
@@ -79,34 +82,38 @@ include "menu.php"
 
             <!-- Article -->
             <div class="article">
-                <h2><span><a href="#">Welcome To Control Panel</a></span></h2>
+                <h2><span><a href="#">Feedback </a></span></h2>
                
 
-                <table width="100%" border="0">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td><div align="center"><img src="design/Profile.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Edu.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Search.png" alt="" width="64" height="64" /></div></td>
+                    <td bgcolor="#A0B9F3"><strong>Give Your Feedback</strong></td>
                   </tr>
                   <tr>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Profile.php"><strong>Profile</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Education.php"><strong>Education</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="SearchJob.php"><strong>Search JOB</strong></a></div></td>
-                  </tr>
-                  <tr>
-                    <td><div align="center"><img src="design/Interview.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Feedback.png" alt="" width="64" height="64" /></div></td>
-                    <td><div align="center"><img src="design/Log.png" alt="" width="64" height="64" /></div></td>
-                  </tr>
-                  <tr>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Walkin.php"><strong>Walkin</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="Feedback.php"><strong>Feedback</strong></a></div></td>
-                    <td bgcolor="#A0B9F3"><div align="center"><a href="logout.php"><strong>Logout</strong></a></div></td>
+                    <td><form id="form1" method="post" action="InsertFeedback.php">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td>Feedback:</td>
+                          <td><span id="sprytextarea1">
+                            <label>
+                            <textarea name="txtFeedback" id="txtFeedback" cols="35" rows="5"></textarea>
+                            </label>
+                          <span class="textareaRequiredMsg">A value is required.</span></span></td>
+                        </tr>
+                        <tr>
+                          <td>&nbsp;</td>
+                          <td><label>
+                            <input type="submit" name="button" id="button" value="Submit" />
+                          </label></td>
+                        </tr>
+                      </table>
+                                        </form>
+                    </td>
                   </tr>
                 </table>
                 <p>&nbsp;</p>
 
-              <p class="btn-more box noprint">&nbsp;</p>
+                <p class="btn-more box noprint">&nbsp;</p>
           </div> <!-- /article -->
 
             <hr class="noscreen" />
@@ -126,5 +133,10 @@ include "footer.php"
 ?>
 </div> <!-- /main -->
 
+<script type="text/javascript">
+<!--
+var sprytextarea1 = new Spry.Widget.ValidationTextarea("sprytextarea1");
+//-->
+</script>
 </body>
 </html>
